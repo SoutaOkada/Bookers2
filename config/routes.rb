@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'homes/top'
 
   get 'users/show'
-  get 'users/view'
+  get 'users/edit'
 
   get 'books/new'
 
