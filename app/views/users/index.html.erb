@@ -1,0 +1,23 @@
+<div>
+  <%= render 'books/newform', book: @book, user: @user%>
+</div>
+
+<div>
+  <h2>Users</h2>
+
+  <table>
+    <td>
+      <th>image</th>
+      <th>name</th>
+    </td>
+
+    <% @users.each do |user| %>
+      <td>
+        <th><%= image_tag user.get_profile_image, size: "50x50" %></th>
+        <th><%= user.name %></th>
+        <th><%= user.introduction %></th>
+        <th><%= link_to "Show", user_path(user) %></th>
+      </td>
+    <% end %>
+  </table>
+</div>

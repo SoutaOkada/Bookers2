@@ -1,0 +1,30 @@
+<div>
+  <%= render 'books/newform', book: @book, user: @user %>
+</div>
+
+<div>
+  <h2>Book detail</h2>
+
+  <table>
+    <td>
+      <th>
+        <%= link_to user_path(@user.id) do %>
+          <%= image_tag @bookdetail.user.get_profile_image,size: "40x40" %>
+          <%= @bookdetail.user.name %>
+        <% end %>
+      </th>
+
+      <th>
+        <%= @bookdetail.title %>
+      </th>
+
+      <th>
+        <%= @bookdetail.body %>
+      </th>
+
+      <th><%= link_to "Edit", edit_book_path(@bookdetail.id) %></th>
+
+      <th><%= link_to "Destroy", book_path(@bookdetail.id), method: :delete, "data-confirm" => "本当に消しますか？" %></th>
+    </td>
+  </table>
+</div>
